@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | SMP Bina Qurani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Noto+Sans+Arabic:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink: #0f172a; --study-blue: #2563eb; }
+        body { background-color: #f8fafc; color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; perspective: 1200px; }
+        .arabic { font-family: 'Noto Sans Arabic', sans-serif; }
+        
+        /* 3D "Paper" Effect */
+        .academic-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            border-radius: 24px;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .academic-card:hover {
+            transform: translateZ(30px) translateY(-5px);
+            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.08);
+            border-color: var(--study-blue);
+        }
+
+        /* Floating Geometric Orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <div class="orb w-96 h-96 bg-blue-100 top-10 -left-20"></div>
+    <div class="orb w-80 h-80 bg-indigo-50 bottom-20 -right-20" style="animation-delay: -2s;"></div>
+
+    <nav class="fixed w-full z-50 px-10 py-6 flex justify-between items-center bg-white/50 backdrop-blur-md border-b border-slate-100">
+        <div class="font-extrabold tracking-tighter text-blue-600 italic">JOVALDO AZKAMURA MANTIRI</div>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <a href="#academics" class="hover:text-blue-600 transition">Academics</a>
+            <a href="#hifz" class="hover:text-blue-600 transition">Spiritual</a>
+            <a href="#hoops" class="hover:text-blue-600 transition">Athletics</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="max-w-4xl text-center reveal">
+            <h2 class="text-blue-600 font-bold uppercase tracking-[0.5em] text-[10px] mb-6">SMP Bina Qurani // Student Portfolio</h2>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9]">
+                Seeking Knowledge, <br> <span class="text-slate-300 italic font-light tracking-normal">Building Future.</span>
+            </h1>
+            <p class="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">
+                Dedicated to academic excellence and spiritual growth. Balancing the disciplines of junior high school with a passion for language and sport.
+            </p>
+        </div>
+    </section>
+
+    <section id="academics" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="academic-card p-10 reveal">
+                <div class="flex justify-between items-center mb-10">
+                    <span class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 font-bold italic">ENG</span>
+                    <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Advanced</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Linguistic Skills</h3>
+                <p class="text-slate-500 text-sm mb-6">Consistent performance in English and Indonesian. Strong focus on creative writing and public speaking.</p>
+                <div class="h-1 w-full bg-slate-100 rounded-full"><div class="h-full bg-blue-600 w-[85%]"></div></div>
+            </div>
+
+            <div class="academic-card p-10 reveal" style="transition-delay: 150ms;">
+                <div class="flex justify-between items-center mb-10 text-slate-300 italic">
+                    <span class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center font-bold text-slate-600">Σ</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">In Progress</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 italic">Mathematics</h3>
+                <p class="text-slate-500 text-sm mb-6">Developing logical reasoning and problem-solving abilities within the SMP curriculum.</p>
+                <div class="h-1 w-full bg-slate-100 rounded-full"><div class="h-full bg-slate-400 w-[60%]"></div></div>
+            </div>
+
+            <div id="hifz" class="academic-card p-10 reveal border-blue-100" style="transition-delay: 300ms;">
+                <div class="flex justify-between items-center mb-10">
+                    <span class="arabic text-xl text-blue-600">قرآن</span>
+                    <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest italic leading-tight">Spiritual</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Quranic Journey</h3>
+                <p class="text-slate-500 text-sm mb-6">Committed to Hifz and Arabic language studies at Bina Qurani. Progressing through Tajweed and memorization.</p>
+                <div class="flex items-center gap-2">
+                    <div class="h-1 flex-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500 w-[55%] animate-pulse"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-blue-600 uppercase">Juz Progress</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="hoops" class="py-32 px-6 bg-slate-900 text-white rounded-[3rem] mx-4 mb-10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 reveal">
+                <span class="px-4 py-1 rounded-full border border-white/20 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Extra-Curricular</span>
+                <h2 class="text-5xl font-extrabold italic uppercase tracking-tighter mb-6">
+                    The Shooting Guard <br> <span class="text-blue-500">Mentality.</span>
+                </h2>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                    Basketball is my secondary focus—a place where I build the leadership and teamwork skills that help me in my studies.
+                </p>
+                <div class="flex gap-10">
+                    <div><p class="text-3xl font-bold">VARSITY</p><p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-2">Team Level</p></div>
+                    <div><p class="text-3xl font-bold">SHARPSHOOTER</p><p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mt-2">Role</p></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 h-[400px] academic-card overflow-hidden border-none reveal">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center">
+        <div class="reveal">
+            <h4 class="text-xs font-bold uppercase tracking-[0.4em] text-slate-300 mb-6">Designed for Growth</h4>
+            <a href="mailto:azkamura.0707@gmail.com" class="text-2xl font-bold hover:text-blue-600 transition underline underline-offset-8">azkamura.0707@gmail.com</a>
+            <p class="mt-20 text-[10px] font-bold text-slate-200 uppercase tracking-widest">© 2026 SMP Bina Qurani Student Profile</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth tilt effect
+        document.querySelectorAll('.academic-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+            });
+        });
+
+        ScrollReveal().reveal('.reveal', { 
+            distance: '50px',
+            origin: 'bottom',
+            duration: 1000,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            interval: 150
+        });
+    </script>
+</body>
+</html>
